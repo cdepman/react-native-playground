@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import _ from 'lodash';
 
-const allColors = [
+const myColors = [
   'white',
   'red',
   'green',
@@ -16,11 +16,11 @@ const allColors = [
   'pink'
 ]
 
-var remainingColors = [];
+var remainingColors = [ ...myColors ];
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       backgroundColor: getColor()
     }
@@ -50,7 +50,7 @@ export default class App extends React.Component {
 }
 
 const getColor = () => {
-  if (remainingColors.length === 0) { remainingColors = [ ...allColors ] }
+  if (remainingColors.length === 0) { remainingColors = [ ...myColors ] }
   const index = Math.round(Math.random()*(remainingColors.length - 1));
   const color = remainingColors[index];
   remainingColors[index] = null;
