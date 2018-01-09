@@ -1,11 +1,15 @@
 import React from 'react';
 import {
+  ART,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Slider,
 } from 'react-native';
 import _ from 'lodash';
+
+import Circle from './components/circle';
 
 const allColors = [
   'white',
@@ -35,15 +39,14 @@ export default class App extends React.Component {
     }
     return (
       <View style={ combineViewStyles }>
-      <TouchableOpacity
-        onPress={ onHelloButtonPress }
-        title="Hello World?"
-        color="#841584"
-        style={ styles.basicInfoButton }
-        accessibilityLabel="Explore this purple button"
-      >
-        <Text style={ styles.submitText }>Press Me!</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={ onHelloButtonPress } style={ styles.basicInfoButton } >
+          <Text style={ styles.submitText }>Press Me!</Text>
+        </TouchableOpacity>
+        <Slider 
+          style={ styles.slider }
+          onValueChange={ onHelloButtonPress }
+          thumbImage={ require('./assets/honeybadger.png') }
+        />
       </View>
     );
   }
@@ -64,6 +67,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  slider: {
+    width: 200
   },
   basicInfoButton: {
     marginTop:10,
