@@ -11,7 +11,7 @@ import _ from 'lodash';
 
 import Circle from './components/circle';
 
-const allColors = [
+const myColors = [
   'white',
   'red',
   'green',
@@ -21,11 +21,11 @@ const allColors = [
   'blue',
 ]
 
-var remainingColors = [];
+var remainingColors = [ ...myColors ];
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       backgroundColor: getColor()
     }
@@ -54,7 +54,7 @@ export default class App extends React.Component {
 }
 
 const getColor = () => {
-  if (remainingColors.length === 0) { remainingColors = [ ...allColors ] }
+  if (remainingColors.length === 0) { remainingColors = [ ...myColors ] }
   const index = Math.round(Math.random()*(remainingColors.length - 1));
   const color = remainingColors[index];
   remainingColors[index] = null;
