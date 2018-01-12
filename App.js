@@ -17,7 +17,8 @@ const allColors = [
   'green',
   'purple',
   'yellow',
-  'pink'
+  'pink',
+  'blue',
 ]
 
 var remainingColors = [];
@@ -69,7 +70,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   slider: {
-    width: 200
+    width: 200,
+    marginTop: 40,
   },
   basicInfoButton: {
     marginTop:10,
@@ -87,5 +89,5 @@ const styles = StyleSheet.create({
     textAlign:'center',
     paddingLeft : 10,
     paddingRight : 10,
-  }
+  },
 });
